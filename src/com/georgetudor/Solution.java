@@ -29,4 +29,26 @@ public class Solution {
         }
         throw new IllegalArgumentException("no match found");
     }
+
+    public static boolean isPalindrome(int x) {
+        if (x == 0) {
+            return true;
+        }
+
+        if (x < 0) {
+            return false;
+        }
+        String stringVar = String.valueOf(x);
+        int startOfString = 0;
+        int endOfString = stringVar.length() -1;
+        while(startOfString <= endOfString ) {
+            if (stringVar.charAt(startOfString) != stringVar.charAt(endOfString)) {
+                return false;
+            }
+            startOfString++;
+            endOfString--;
+        }
+        return true;
+    }
+
 }
